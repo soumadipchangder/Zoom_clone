@@ -51,9 +51,8 @@ COPY --from=frontend-builder /build/frontend/.next/static/ ./.next/static/
 COPY --from=frontend-builder /build/frontend/public/ ./public/
 
 # ── nginx config ────────────────────────────────────────────────────────
-COPY nginx.conf /etc/nginx/sites-available/default
-RUN rm -f /etc/nginx/sites-enabled/default \
-    && ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+COPY nginx.conf /etc/nginx/nginx.conf
+RUN rm -f /etc/nginx/sites-enabled/default
 
 # ── supervisord config ──────────────────────────────────────────────────
 COPY supervisord.conf /etc/supervisor/conf.d/app.conf
