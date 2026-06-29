@@ -5,7 +5,7 @@
 # ══════════════════════════════════════════════════════════════════════════
 
 # ─── Stage 1: Build Next.js frontend ──────────────────────────────────────
-FROM node:20-slim AS frontend-builder
+FROM node:20 AS frontend-builder
 
 # These build args are set as "Space Variables" in HF Spaces settings
 ARG NEXT_PUBLIC_API_URL
