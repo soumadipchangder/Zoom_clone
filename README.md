@@ -1,3 +1,12 @@
+---
+title: Zoom Clone
+emoji: 🎥
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+pinned: false
+---
+
 # ZoomClone — Video Conferencing Platform
 
 A full-stack Zoom clone built with Next.js (frontend) and FastAPI + SQLite (backend), replicating Zoom's design, UX, and core meeting workflows.
