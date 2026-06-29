@@ -14,9 +14,12 @@ ARG NEXTAUTH_SECRET
 
 WORKDIR /build/frontend
 
+ENV NEXT_TELEMETRY_DISABLED=1
+ENV NODE_OPTIONS="--max-old-space-size=4096"
+
 # Install deps first (layer cached unless package.json changes)
 COPY frontend/package*.json ./
-RUN npm install
+RUN npm install --legacy-peer-deps --no-audit --no-fund
 
 # Copy source and build
 COPY frontend/ ./
