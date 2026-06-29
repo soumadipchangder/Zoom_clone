@@ -64,6 +64,7 @@ ENV NEXT_PORT=3000
 ENV BACKEND_PORT=8000
 
 # SQLite stored in /data (enable Persistent Storage in HF Space settings)
+RUN mkdir -p /data && chown -R 1000:1000 /data && chmod -R 777 /data
 ENV DATABASE_URL=sqlite:////data/zoomclone.db
 
 EXPOSE 7860
