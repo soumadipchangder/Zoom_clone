@@ -61,6 +61,7 @@ COPY supervisord.conf /etc/supervisor/conf.d/app.conf
 ENV PORT=7860
 ENV NEXT_PORT=3000
 ENV BACKEND_PORT=8000
+ENV AUTH_TRUST_HOST=true
 
 # SQLite stored in /data (enable Persistent Storage in HF Space settings)
 RUN mkdir -p /data && chown -R 1000:1000 /data && chmod -R 777 /data
